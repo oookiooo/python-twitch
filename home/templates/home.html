@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    {% if user.is_authenticated %}
+        <p>Username: {{ username }}</p>
+        <p>Password: {{ password }}</p> <!-- Hasło jest maskowane -->
+    {% else %}
+        <p>You are not logged in. <a href="{% url 'login' %}">Login</a></p>
+    {% endif %}
+</body>
+</html>
